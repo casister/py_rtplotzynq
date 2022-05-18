@@ -34,26 +34,6 @@ class RTAcqPlot:
             self._fail()
         self.close()
 
-        # self.plot = MainWindow()
-        # # win = mainWindow.MainWindow()
-        # #     win.setWindowTitle("{} - {}".format(Constants.app_title, Constants.app_version))
-        # self.plot.show()
-        # self._app.exec()
-
-        #           win = mainWindow.MainWindow()
-        # win.show()
-
-        # self.plot_view = QtWidgets.QWidget()
-        # self.ui = Ui_plot_view()
-        # self.ui.setupUi(self.plot_view)
-        # self.plot_view.show()
-        #           self._app.exec()
-
-    # plot_view = QtWidgets.QWidget()
-    # ui = Ui_plot_view()
-    # ui.setupUi(plot_view)
-    # plot_view.show()
-
     def close(self):
         self._app.exit()
         Log.close()
