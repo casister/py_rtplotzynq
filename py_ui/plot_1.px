@@ -1,0 +1,372 @@
+# -*- coding: utf-8 -*-
+# ^^^^^^^^^^^^^^^^^^^^^ coding for the strings
+# https://www.carlosble.com/2010/12/understanding-python-and-unicode/
+# https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings/
+
+# Form implementation generated from reading ui file 'plot_1.ui'
+#
+# Created by: PyQt5 UI code generator 5.14.1
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+import pyqtgraph as pg
+from pyqtgraph import PlotWidget
+import numpy as np
+from random import randint
+
+
+class Ui_plot_view(object):
+    def setupUi(self, plot_view):
+        plot_view.setObjectName("plot_view")
+        plot_view.resize(1207, 772)
+
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(plot_view.sizePolicy().hasHeightForWidth())
+        plot_view.setSizePolicy(sizePolicy)
+
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(plot_view)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+
+        self.tabs = QtWidgets.QTabWidget(plot_view)
+        self.tabs.setObjectName("tabs")
+        self.leds_tab = QtWidgets.QWidget()
+        self.leds_tab.setObjectName("leds_tab")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.leds_tab)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.led1_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led1_2.setText("")
+        self.led1_2.setAutoExclusive(False)
+        self.led1_2.setObjectName("led1_2")
+        self.horizontalLayout_2.addWidget(self.led1_2)
+        self.led2_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led2_2.setText("")
+        self.led2_2.setAutoExclusive(False)
+        self.led2_2.setObjectName("led2_2")
+        self.horizontalLayout_2.addWidget(self.led2_2)
+        self.led3_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led3_2.setText("")
+        self.led3_2.setAutoExclusive(False)
+        self.led3_2.setObjectName("led3_2")
+        self.horizontalLayout_2.addWidget(self.led3_2)
+        self.led4_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led4_2.setText("")
+        self.led4_2.setAutoExclusive(False)
+        self.led4_2.setObjectName("led4_2")
+        self.horizontalLayout_2.addWidget(self.led4_2)
+        self.led5_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led5_2.setText("")
+        self.led5_2.setAutoExclusive(False)
+        self.led5_2.setObjectName("led5_2")
+        self.horizontalLayout_2.addWidget(self.led5_2)
+        self.led6_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led6_2.setText("")
+        self.led6_2.setAutoExclusive(False)
+        self.led6_2.setObjectName("led6_2")
+        self.horizontalLayout_2.addWidget(self.led6_2)
+        self.led7_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led7_2.setText("")
+        self.led7_2.setAutoExclusive(False)
+        self.led7_2.setObjectName("led7_2")
+        self.horizontalLayout_2.addWidget(self.led7_2)
+        self.led8_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.led8_2.setText("")
+        self.led8_2.setAutoExclusive(False)
+        self.led8_2.setObjectName("led8_2")
+        self.horizontalLayout_2.addWidget(self.led8_2)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.label = QtWidgets.QLabel(self.leds_tab)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.sendButton = QtWidgets.QPushButton(self.leds_tab)
+        self.sendButton.setToolTip("")
+        self.sendButton.setObjectName("sendButton")
+        self.verticalLayout.addWidget(self.sendButton)
+        self.line_2 = QtWidgets.QFrame(self.leds_tab)
+        self.line_2.setLineWidth(4)
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName("line_2")
+        self.verticalLayout.addWidget(self.line_2)
+        self.line = QtWidgets.QFrame(self.leds_tab)
+        self.line.setLineWidth(4)
+        self.line.setMidLineWidth(0)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout.addWidget(self.line)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.radioButton_4 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_4.setText("")
+        self.radioButton_4.setObjectName("radioButton_4")
+        self.horizontalLayout.addWidget(self.radioButton_4)
+        self.radioButton_8 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_8.setText("")
+        self.radioButton_8.setObjectName("radioButton_8")
+        self.horizontalLayout.addWidget(self.radioButton_8)
+        self.radioButton_6 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_6.setText("")
+        self.radioButton_6.setObjectName("radioButton_6")
+        self.horizontalLayout.addWidget(self.radioButton_6)
+        self.radioButton_7 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_7.setText("")
+        self.radioButton_7.setObjectName("radioButton_7")
+        self.horizontalLayout.addWidget(self.radioButton_7)
+        self.radioButton_5 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_5.setText("")
+        self.radioButton_5.setObjectName("radioButton_5")
+        self.horizontalLayout.addWidget(self.radioButton_5)
+        self.radioButton_3 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_3.setText("")
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.horizontalLayout.addWidget(self.radioButton_3)
+        self.radioButton = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton.setText("")
+        self.radioButton.setObjectName("radioButton")
+        self.horizontalLayout.addWidget(self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.leds_tab)
+        self.radioButton_2.setText("")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.horizontalLayout.addWidget(self.radioButton_2)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.label_2 = QtWidgets.QLabel(self.leds_tab)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
+        self.pushButton = QtWidgets.QPushButton(self.leds_tab)
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.pushButton)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.horizontalLayout_7.addItem(spacerItem)
+        self.verticalLayout.addLayout(self.horizontalLayout_7)
+        self.horizontalLayout_4.addLayout(self.verticalLayout)
+        self.ledInformation = QtWidgets.QTextEdit(self.leds_tab)
+        self.ledInformation.setReadOnly(True)
+        self.ledInformation.setObjectName("ledInformation")
+        self.horizontalLayout_4.addWidget(self.ledInformation)
+
+        self.tabs.addTab(self.leds_tab, "")
+        self.plot_tab = QtWidgets.QWidget()
+        self.plot_tab.setObjectName("plot_tab")
+
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.plot_tab)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.widget = QtWidgets.QWidget(self.plot_tab)
+        self.widget.setObjectName("widget")
+
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.status = QtWidgets.QPushButton(self.widget)
+        self.status.setText("")
+        self.status.setObjectName("status")
+        self.verticalLayout_2.addWidget(self.status)
+
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.start = QtWidgets.QPushButton(self.widget)
+        self.start.setObjectName("start")
+        self.horizontalLayout_5.addWidget(self.start)
+        self.stop = QtWidgets.QPushButton(self.widget)
+        self.stop.setObjectName("stop")
+        self.horizontalLayout_5.addWidget(self.stop)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_5)
+        self.lcd = QtWidgets.QLCDNumber(self.widget)
+        self.lcd.setObjectName("lcd")
+        self.verticalLayout_2.addWidget(self.lcd)
+        self.line_3 = QtWidgets.QFrame(self.widget)
+        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_3.setObjectName("line_3")
+        self.verticalLayout_2.addWidget(self.line_3)
+        self.label_3 = QtWidgets.QLabel(self.widget)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_2.addWidget(self.label_3)
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.checkBox_4 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_4.setObjectName("checkBox_4")
+        self.horizontalLayout_8.addWidget(self.checkBox_4)
+        self.checkBox_2 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_2.setObjectName("checkBox_2")
+        self.horizontalLayout_8.addWidget(self.checkBox_2)
+        self.checkBox = QtWidgets.QCheckBox(self.widget)
+        self.checkBox.setObjectName("checkBox")
+        self.horizontalLayout_8.addWidget(self.checkBox)
+        self.checkBox_3 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_3.setObjectName("checkBox_3")
+        self.horizontalLayout_8.addWidget(self.checkBox_3)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_8)
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.checkBox_6 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_6.setObjectName("checkBox_6")
+        self.horizontalLayout_9.addWidget(self.checkBox_6)
+        self.checkBox_8 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_8.setObjectName("checkBox_8")
+        self.horizontalLayout_9.addWidget(self.checkBox_8)
+        self.checkBox_7 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_7.setObjectName("checkBox_7")
+        self.horizontalLayout_9.addWidget(self.checkBox_7)
+        self.checkBox_5 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_5.setObjectName("checkBox_5")
+        self.horizontalLayout_9.addWidget(self.checkBox_5)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_9)
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.checkBox_10 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_10.setObjectName("checkBox_10")
+        self.horizontalLayout_10.addWidget(self.checkBox_10)
+        self.checkBox_12 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_12.setObjectName("checkBox_12")
+        self.horizontalLayout_10.addWidget(self.checkBox_12)
+        self.checkBox_11 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_11.setObjectName("checkBox_11")
+        self.horizontalLayout_10.addWidget(self.checkBox_11)
+        self.checkBox_9 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_9.setObjectName("checkBox_9")
+        self.horizontalLayout_10.addWidget(self.checkBox_9)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_10)
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
+        self.checkBox_14 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_14.setObjectName("checkBox_14")
+        self.horizontalLayout_11.addWidget(self.checkBox_14)
+        self.checkBox_16 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_16.setObjectName("checkBox_16")
+        self.horizontalLayout_11.addWidget(self.checkBox_16)
+        self.checkBox_15 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_15.setObjectName("checkBox_15")
+        self.horizontalLayout_11.addWidget(self.checkBox_15)
+        self.checkBox_13 = QtWidgets.QCheckBox(self.widget)
+        self.checkBox_13.setObjectName("checkBox_13")
+        self.horizontalLayout_11.addWidget(self.checkBox_13)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_11)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem1)
+        self.horizontalLayout_6.addWidget(self.widget)
+
+        self.graphComponent = PlotWidget(self.plot_tab)
+        self.graphComponent.setObjectName("graphComponent")
+        self.horizontalLayout_6.addWidget(self.graphComponent)
+        self.tabs.addTab(self.plot_tab, "")
+        self.horizontalLayout_3.addWidget(self.tabs)
+
+        self.retranslateUi(plot_view)
+        self.tabs.setCurrentIndex(1)
+
+        self.start.clicked.connect(lambda: self.update_plot_data())
+        self.stop.clicked.connect(lambda: self.pause())
+
+        # title
+        self.graphComponent.setTitle("Real Time Sensors Reading", size='16pt', color='#FFFFFF', bold=True)
+
+        # axi labels
+        self.graphComponent.setLabel('left', 'Acceleration', color='white', size=40)
+        self.graphComponent.setLabel('bottom', 'Sample Time', color='white', size=40)
+
+        # first signal values generation
+        self.x1 = list(range(100))  # 100 time points
+        self.y1 = [randint(0, 100) for _ in range(100)]  # 100 data points
+        # self.y1 = np.sin(np.linspace(0, 4 * np.pi, 100))
+
+        # second signal values generation
+        self.x2 = list(range(100))  # 100 time points
+        self.y2 = [randint(0, 100) for _ in range(100)]  # 100 data points
+
+        pen1 = pg.mkPen(color=(255, 255, 255))
+        pen2 = pg.mkPen(color=(23, 255, 0))
+        self.data_line1 = self.graphComponent.plot(self.x1, self.y1, pen=pen1)
+        self.data_line2 = self.graphComponent.plot(self.x2, self.y2, pen=pen2)
+
+        # plot background color
+        self.graphComponent.setBackground('k')
+
+        self.timer = QtCore.QTimer()
+        self.timer.setInterval(100)
+        self.timer.timeout.connect(self.update_plot_data)
+        self.timer.start()
+
+        QtCore.QMetaObject.connectSlotsByName(plot_view)
+
+    def retranslateUi(self, plot_view):
+        _translate = QtCore.QCoreApplication.translate
+        plot_view.setWindowTitle(_translate("plot_view", "Basic Rd/Wr Interface "))
+        self.label.setText(_translate("plot_view", " L0 L1L2 L3L4 L5 L6 L7"))
+        self.sendButton.setText(_translate("plot_view", "Write Values to LEDs"))
+        self.label_2.setText(_translate("plot_view", " S0 S1 S2 S3 S4 S5 S6 S7"))
+        self.pushButton.setText(_translate("plot_view", "Read Values from  SWs"))
+        self.tabs.setTabText(self.tabs.indexOf(self.leds_tab), _translate("plot_view", "LEDs/SWs"))
+        self.start.setText(_translate("plot_view", "START"))
+        self.stop.setText(_translate("plot_view", "STOP"))
+        self.label_3.setText(_translate("plot_view", "Chanels"))
+        self.checkBox_4.setText(_translate("plot_view", "1"))
+        self.checkBox_2.setText(_translate("plot_view", "2"))
+        self.checkBox.setText(_translate("plot_view", "3"))
+        self.checkBox_3.setText(_translate("plot_view", "4"))
+        self.checkBox_6.setText(_translate("plot_view", "5"))
+        self.checkBox_8.setText(_translate("plot_view", "6"))
+        self.checkBox_7.setText(_translate("plot_view", "7"))
+        self.checkBox_5.setText(_translate("plot_view", "8"))
+        self.checkBox_10.setText(_translate("plot_view", "9"))
+        self.checkBox_12.setText(_translate("plot_view", "10"))
+        self.checkBox_11.setText(_translate("plot_view", "11"))
+        self.checkBox_9.setText(_translate("plot_view", "12"))
+        self.checkBox_14.setText(_translate("plot_view", "13"))
+        self.checkBox_16.setText(_translate("plot_view", "14"))
+        self.checkBox_15.setText(_translate("plot_view", "15"))
+        self.checkBox_13.setText(_translate("plot_view", "16"))
+        self.tabs.setTabText(self.tabs.indexOf(self.plot_tab), _translate("plot_view", "Sensors"))
+
+
+    def update_plot_data(self):
+        self.timer.start()
+
+        # signal 1
+        self.x1 = self.x1[1:]  # Remove the first y element.
+        self.x1.append(self.x1[-1] + 1)  # Add a new value 1 higher than the last.
+
+        self.y1 = self.y1[1:]  # Remove the first
+        self.y1.append(randint(0, 100))  # Add a new random value.
+        # self.y1.append(np.sin(np.linspace(0, 4 * np.pi, 100)))
+
+        self.data_line1.setData(self.x1, self.y1)  # Update the data.
+
+        # signal 2
+        self.x2 = self.x2[1:]  # Remove the first y element.
+        self.x2.append(self.x2[-1] + 1)  # Add a new value 1 higher than the last.
+
+        self.y2 = self.y2[1:]  # Remove the first
+        self.y2.append(randint(0, 100))  # Add a new random value.
+
+        self.data_line2.setData(self.x2, self.y2)  # Update the data.
+
+    def pause(self):
+        print("pausing...")
+        # self.graphicsView.stop()
+        self.timer.stop()
+
+
+# from pyqtgraph import PlotWidget
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    plot_view = QtWidgets.QWidget()
+    ui = Ui_plot_view()
+    ui.setupUi(plot_view)
+    plot_view.show()
+    sys.exit(app.exec_())
