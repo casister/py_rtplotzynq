@@ -1,5 +1,3 @@
-# from random import randint
-# import pyqtgraph as pg
 import numpy as np
 from PyQt5 import QtWidgets, QtCore
 from common.cl_arguments import *
